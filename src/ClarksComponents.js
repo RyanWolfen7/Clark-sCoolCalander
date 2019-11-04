@@ -21,7 +21,7 @@ export const CalenderWrapper = styled.div`
 && {
     min-height: 100vh;
     min-width: 100vw;
-    background-color: #1e5d84;
+    background-color: ${ props => props.backgroundColor ? props.backgroundColor : '#1e5d84' };
 }
 `
 
@@ -30,7 +30,7 @@ export const DeliveryDateWrapper = styled.div`
     margin: 4rem 2rem 0;
     padding: 0 9rem;
     max-width: 63rem;
-    background-color: #f7f5f3;
+    background-color: ${ props => props.backgroundColor ? props.backgroundColor : '#f7f5f3' };
     border-radius: 0.3rem;
     height: auto;
 }
@@ -82,5 +82,23 @@ export const BoldHeader = styled.h2`
     padding: .2rem 1rem;
     transform: translateY(-0.3rem);
     margin: 0;
+}
+`
+
+export const Button = styled.button`
+&& {
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: ${ props => props.backgroundColor ? props.backgroundColor : '#fff' };
+    box-shadow:  ${ props => props.boxShadow ? props.boxShadow : '0 0.2rem 0.4rem 0 rgba(0,0,0,0.2)' };
+    border-radius: .3rem;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    padding: 0;
+    border: ${ props => props.border ? props.border : '0.2rem solid #5d92b8' };
 }
 `
