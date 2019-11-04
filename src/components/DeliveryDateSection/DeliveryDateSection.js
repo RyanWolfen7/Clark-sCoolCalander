@@ -1,5 +1,5 @@
 import React from 'react'
-import { ClarkSection, TitleContainer, BoldHeader, DeliveryDateWrapper, Button} from '../../ClarksComponents'
+import { ClarkSection, TitleContainer, BoldHeader, DeliveryDateWrapper, Button, ButtonContent} from '../../ClarksComponents'
 
 const DeliveryDateSection = (props) => {
 
@@ -14,7 +14,10 @@ const DeliveryDateSection = (props) => {
                 </TitleContainer>
                 <div display={'block'}>
                     <Button>
-
+                        <ButtonContent>
+                            <p> Wed 06 Nov </p>
+                            <span> Earliest Delivery</span>
+                        </ButtonContent>
                     </Button>
                 </div>
             </ClarkSection>
