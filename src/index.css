@@ -10,4 +10,10 @@ body {
 
 html {
   scroll-behavior: smooth;
+  font-family: "gt-pressura-mono", courier, courier-new, monospace;
+  font-size: 0.625rem;
+  font-weight: 100;
+  line-height: 1.5;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
 }
