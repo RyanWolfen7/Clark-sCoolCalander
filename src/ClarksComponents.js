@@ -7,3 +7,11 @@ export const ClarkSection = styled.section`
     margin: auto;
 }
 `
+
+export const TitleContainer = styled.div`
+&& {
+    margin: 0px 20px;
+    padding: 0px 90px;
+    background: #f7f5f3;
+}
+`

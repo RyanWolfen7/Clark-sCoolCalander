@@ -1,16 +1,16 @@
 import React from 'react'
-import { ClarkSection } from '../../ClarksComponents'
+import { ClarkSection, TitleContainer } from '../../ClarksComponents'
 
 const DeliveryDateSection = (props) => {
 
     return (
         <ClarkSection>
-            <div class='title-contaier'>
+            <TitleContainer>
                 <h2>
                     "Choose your delivery day"
-                    <span class='title-container__free-delivery-notice'> Delivery is always free</span>
+                    <span class='free-delivery-notice'> Delivery is always free</span>
                 </h2>
-            </div>
+            </TitleContainer>
         </ClarkSection>
     )
 }
