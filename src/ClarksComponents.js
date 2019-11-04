@@ -103,6 +103,10 @@ export const Button = styled.button`
     cursor: pointer;
     letter-spacing: .12rem;
 }
+&& div:hover {
+    transform: translateY(-1px) scale(1.02,1.02);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.19), 0 3px 7px 0 rgba(0, 0, 0, 0.17);
+}
 `
 
 export const ButtonContent = styled.div`
