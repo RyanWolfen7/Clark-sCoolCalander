@@ -1,11 +1,11 @@
 import React from 'react';
-import DeliveryDateContainer from './DeliveryDateSection/DeliveryDateContainer'
+import DeliveryDateSection from './DeliveryDateSection/DeliveryDateSection'
 
 function App() {
   return (
     <div className="App">
       <h1> Hello World </h1>
-      <DeliveryDateContainer/>
+      <DeliveryDateSection/>
     </div>
   );
 }
