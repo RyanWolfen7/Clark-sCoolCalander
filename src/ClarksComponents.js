@@ -35,10 +35,9 @@ export const DeliveryDateWrapper = styled.div`
     border-radius: 0.3rem;
     height: auto;
 }
-&& {
-    *, *::before, *::after {
-        box-sizing: border-box;
-    }
+&& *, *::before, *::after {
+    box-sizing: border-box;
+
 }
 `
 
