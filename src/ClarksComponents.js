@@ -102,10 +102,6 @@ export const Button = styled.button`
     cursor: pointer;
     letter-spacing: .12rem;
 }
-&& div:hover {
-    transform: translateY(-1px) scale(1.02,1.02);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.19), 0 3px 7px 0 rgba(0, 0, 0, 0.17);
-}
 `
 
 export const ButtonContent = styled.div`
@@ -164,19 +160,7 @@ export const ButtonContentDate = styled.div `
     font-size: 1.6rem;
     position: relative;
 }
-&.calander {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    position: relative;
-    margin-bottom: -1rem;
-    margin-left: -2rem;
-    z-index: 1;
-}
-&& ::after {
+::after {
     content: '';
     height: 14rem;
     border-bottom-left-radius: 7rem;
@@ -191,5 +175,72 @@ export const ButtonContentDate = styled.div `
     transform-origin: right;
     position: absolute;
     background-color: #c9dbe8;
+}
+`
+
+export const CalanderDiv = styled.div`
+&& {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: -1rem;
+    margin-left: -2rem;
+    z-index: 1;
+}
+&& span {
+    position: absolute;
+    width: 20.5px;
+    height: 16.5px;
+    left: 51%;
+    top: 55%;
+    color: #1e5d84;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 1.4rem;
+    background-color: #ffff;
+}
+&& img {
+    height: 2.8rem;
+    margin-bottom: .7rem;
+    margin-top: .2rem;
+    border-style: none;
+}    
+`
+
+export const ButtonText = styled.div`
+&& {
+    display: -webkit-box;
+    display: flex;
+    padding: 0 1rem;
+    -webkit-box-align: center;
+    align-items: center;
+} 
+&& p {
+    position: relative;
+    white-space: nowrap;
+    z-index: 1;
+    color: #1e5d84;
+    font-size: 1.6rem;
+    background-size: 1rem;
+    margin-right: .5rem;
+    margin-bottom: .2rem;
+}
+p ::after {
+    background-color: #1e5d84;
+    bottom: 0;
+    content: '';
+    height: 0.2rem;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+&& img {
+    height: 1.2rem;
+    z-index: 1;
 }
 `
