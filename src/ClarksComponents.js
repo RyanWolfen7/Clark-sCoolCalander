@@ -22,7 +22,7 @@ export const ContentWrapper = styled.div`
 }
 `
 
-export const CalenderWrapper = styled.div`
+export const CalenderAppWrapper = styled.div`
 && {
     min-height: 100vh;
     min-width: 100vw;
@@ -35,10 +35,16 @@ export const CalenderWrapper = styled.div`
 }
 `
 
+export const CalendarWrapper = styled.div`
+    && {
+        padding: 1.5rem;
+    }
+`
+
 export const DeliveryDateWrapper = styled.div`
 && {
-    margin: 4rem 2rem 0;
-    padding: 0 9rem;
+    margin: 15rem 2rem 0;
+    padding: 0 5rem;
     max-width: 63rem;
     background-color: ${ props => props.backgroundColor ? props.backgroundColor : '#f7f5f3' };
     border-radius: 0.3rem;
@@ -255,12 +261,12 @@ export const ButtonText = styled.div`
     color: #1e5d84;
     font-size: 1.6rem;
     background-size: 1rem;
-    margin-right: .5rem;
+    margin-right: .9rem;
     margin-bottom: .2rem;
 
     ::after {
         background-color: #1e5d84;
-        bottom: 0;
+        bottom: 40;
         content: '';
         height: 0.2rem;
         left: 0;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react'
 import { ClarkSection, TitleContainer, BoldHeader, DeliveryDateWrapper } from '../../ClarksComponents'
 import CalendarButton from './CalendarButton'
+import Calendar from './Calendar'
 
 const DeliveryDateSection = (props) => {
   const currentDate = new Date().toDateString().split(' ')
@@ -20,10 +21,12 @@ const DeliveryDateSection = (props) => {
               <span className='free-delivery-notice'> Delivery is always free</span>
           </BoldHeader>
         </TitleContainer>
-        { calendarOpen && <h1>HOME</h1>}
+        { calendarOpen && <Calendar
+          date={selectedDate}
+        /> }
         <CalendarButton 
-          handleCalendar={handleCalendar}
-          selectedDate={selectedDate}
+          handler={handleCalendar}
+          date={selectedDate}
         /> 
       </ClarkSection>
     </DeliveryDateWrapper>

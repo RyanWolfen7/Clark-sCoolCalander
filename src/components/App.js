@@ -1,13 +1,13 @@
 import React from 'react';
 import DeliveryDateSection from './DeliveryDateSection/DeliveryDateSection'
-import { ContentWrapper, CalenderWrapper } from './../ClarksComponents'
+import { ContentWrapper, CalenderAppWrapper } from './../ClarksComponents'
 function App() {
   return (
-    <CalenderWrapper>
+    <CalenderAppWrapper>
       <ContentWrapper>
         <DeliveryDateSection/>
       </ContentWrapper>
-    </CalenderWrapper> 
+    </CalenderAppWrapper> 
   )
 }
 

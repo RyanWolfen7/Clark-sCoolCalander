@@ -3,8 +3,8 @@ import { Button, ButtonContent, ButtonContentDate, CalanderDiv, ButtonText } fro
 import Calendar from '../../assets/icons/calendar.svg'
 
 const CalendarButton = (props) => {
-  const { day, numDay, month } = props.selectedDate
-  const handleCalendar = props.handleCalendar
+  const { day, numDay, month } = props.date
+  const handleCalendar = props.handler
 
   return (
     <div display={'block'}>
