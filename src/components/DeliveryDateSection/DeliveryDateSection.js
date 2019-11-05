@@ -25,10 +25,10 @@ const DeliveryDateSection = (props) => {
           handler={handleCalendar}
           date={selectedDate}
         /> 
-      </ClarkSection>
-      { calendarOpen && <Calendar
+        { calendarOpen && <Calendar
           date={selectedDate}
         /> }
+      </ClarkSection>
     </DeliveryDateWrapper>
   )
 }
