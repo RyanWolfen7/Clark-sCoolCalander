@@ -5,7 +5,6 @@ import Calendar from '../../assets/icons/calendar.svg'
 const CalendarButton = (props) => {
   const { day, numDay, month } = props.selectedDate
   const handleCalendar = props.handleCalendar
-  console.log(props)
 
   return (
     <div display={'block'}>

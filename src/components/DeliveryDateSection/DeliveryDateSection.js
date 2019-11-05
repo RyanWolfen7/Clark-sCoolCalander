@@ -21,10 +21,10 @@ const DeliveryDateSection = (props) => {
           </BoldHeader>
         </TitleContainer>
         { calendarOpen && <h1>HOME</h1>}
-        { <CalendarButton 
+        <CalendarButton 
           handleCalendar={handleCalendar}
           selectedDate={selectedDate}
-        /> }
+        /> 
       </ClarkSection>
     </DeliveryDateWrapper>
   )
