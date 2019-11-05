@@ -3,9 +3,14 @@ import { ClarkSection, TitleContainer, BoldHeader, DeliveryDateWrapper, Button, 
 import Calendar from '../../assets/icons/calendar.svg'
 
 const DeliveryDateSection = (props) => {
-  const currentDate = new Date()
-  const [ selectedDate, setSelectedDate ] = useState({ day: currentDate.getDay() , month: currentDate.getMonth(), year: currentDate.getYear() })
-  const { day, month, year } = selectedDate
+  const currentDate = new Date().toDateString().split(' ')
+  const [ selectedDate, setSelectedDate ] = useState({ day: currentDate[0], month: currentDate[1], numDay: currentDate[2], year: currentDate[3] })
+  const [ calendarOpen, setCalendarOpen ] = useState(false)
+  const { day, numDay, month, year } = selectedDate
+
+  const handleCalendar = () => {
+    setCalendarOpen(!calendarOpen)
+  }
 
   return (
     <DeliveryDateWrapper>
@@ -16,15 +21,16 @@ const DeliveryDateSection = (props) => {
               <span className='free-delivery-notice'> Delivery is always free</span>
           </BoldHeader>
         </TitleContainer>
+        { calendarOpen && <h1>HOME</h1>}
         <div display={'block'}>
-          <Button>
+          <Button onClick={ () => handleCalendar() } >
             <ButtonContent>
-              <p> Wed { day } { month } </p>
+              <p> { day } { numDay } { month } </p>
               <span> Earliest Delivery</span>
             </ButtonContent>
             <ButtonContentDate>
               <CalanderDiv>
-                <span>{ day }</span>
+                <span>{ numDay }</span>
                 <img alt='Calendar' src={Calendar} />
               </CalanderDiv>
               <ButtonText className='change'>

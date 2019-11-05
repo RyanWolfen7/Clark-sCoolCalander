@@ -14,6 +14,11 @@ export const ContentWrapper = styled.div`
     grid-row-gap: 3rem;
     -webkit-box-align: start;
     align-items: start;
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    
+    }
 }
 `
 
@@ -22,6 +27,11 @@ export const CalenderWrapper = styled.div`
     min-height: 100vh;
     min-width: 100vw;
     background-color: ${ props => props.backgroundColor ? props.backgroundColor : '#1e5d84' };
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    
+    }
 }
 `
 
@@ -33,10 +43,11 @@ export const DeliveryDateWrapper = styled.div`
     background-color: ${ props => props.backgroundColor ? props.backgroundColor : '#f7f5f3' };
     border-radius: 0.3rem;
     height: auto;
-}
-&& *, *::before, *::after {
-    box-sizing: border-box;
 
+    *, *::before, *::after {
+        box-sizing: border-box;
+    
+    }
 }
 `
 
@@ -44,9 +55,10 @@ export const ClarkSection = styled.section`
 && {
     max-width: 45rem;
     margin: auto;
-}
-&& *, *::before, *::after {
-    display: block;
+
+    *, *::before, *::after {
+        display: block;
+    }
 }
 `
 
@@ -68,6 +80,10 @@ export const BoldHeader = styled.h2`
     color: ${ props => props.color ? props.color : 'black'};
     font-family: "cooperhewitt", helvetica, arial, sans-serif;
     font-weight: 900;
+
+    *::before, *::after {
+        box-sizing: border-box;
+    }
 }
 && span {
     background-color: #e7e6e4;
@@ -81,6 +97,10 @@ export const BoldHeader = styled.h2`
     padding: .2rem 1rem;
     transform: translateY(-0.3rem);
     margin: 0;
+
+    *::before, *::after {
+        box-sizing: border-box;
+    }
 }
 `
 
@@ -101,6 +121,15 @@ export const Button = styled.button`
     border: ${ props => props.border ? props.border : '0.2rem solid #5d92b8' };
     cursor: pointer;
     letter-spacing: .12rem;
+
+    *::before, *::after {
+        box-sizing: border-box;
+    }
+}
+:hover {
+    nth-child(7):hover {
+        transform: scaleX(3)
+    }
 }
 `
 
@@ -121,16 +150,16 @@ export const ButtonContent = styled.div`
     text-align: left;
     margin-right: 1rem;
 }
-&& span::before {
-    content: '';
-    display: inline-block;
-    height: 1.2rem;
-    width: 2.2rem;
-    background: url(${van}) center no-repeat;
-    background-size: contain;
-    margin: auto .5rem auto 0;
-}
 && span {
+    ::before {
+        content: '';
+        display: inline-block;
+        height: 1.2rem;
+        width: 2.2rem;
+        background: url(${van}) center no-repeat;
+        background-size: contain;
+        margin: auto .5rem auto 0;
+    }
     background-color: #ecf4f9;
     color: #1e5d84;
     padding: .5rem;
@@ -228,16 +257,17 @@ export const ButtonText = styled.div`
     background-size: 1rem;
     margin-right: .5rem;
     margin-bottom: .2rem;
-}
-p ::after {
-    background-color: #1e5d84;
-    bottom: 0;
-    content: '';
-    height: 0.2rem;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
+
+    ::after {
+        background-color: #1e5d84;
+        bottom: 0;
+        content: '';
+        height: 0.2rem;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
 }
 && img {
     height: 1.2rem;
