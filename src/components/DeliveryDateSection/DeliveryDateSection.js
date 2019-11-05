@@ -1,5 +1,6 @@
 import React from 'react'
-import { ClarkSection, TitleContainer, BoldHeader, DeliveryDateWrapper, Button, ButtonContent} from '../../ClarksComponents'
+import { ClarkSection, TitleContainer, BoldHeader, DeliveryDateWrapper, Button, ButtonContent, ButtonContentDate} from '../../ClarksComponents'
+import calender from '../../assets/icons/calander.svg'
 
 const DeliveryDateSection = (props) => {
 
@@ -18,6 +19,12 @@ const DeliveryDateSection = (props) => {
                             <p> Wed 06 Nov </p>
                             <span> Earliest Delivery</span>
                         </ButtonContent>
+                        <ButtonContentDate>
+                            <div class='calander'>
+                                <span>06</span>
+                                <img alt='' src={calender}/>
+                            </div>
+                        </ButtonContentDate>
                     </Button>
                 </div>
             </ClarkSection>

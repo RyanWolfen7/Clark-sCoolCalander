@@ -1,5 +1,4 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import van  from './assets/icons/van.svg'
 
 export const ContentWrapper = styled.div`
@@ -164,5 +163,33 @@ export const ButtonContentDate = styled.div `
     padding: .6rem .5rem;
     font-size: 1.6rem;
     position: relative;
+}
+&.calander {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: -1rem;
+    margin-left: -2rem;
+    z-index: 1;
+}
+&& ::after {
+    content: '';
+    height: 14rem;
+    border-bottom-left-radius: 7rem;
+    border-top-left-radius: 7rem;
+    width: calc(100% + 1rem);
+    top: -3.6rem;
+    -webkit-transition: -webkit-transform .3s ease;
+    transition: -webkit-transform .3s ease;
+    transition: transform .3s ease;
+    transition: transform .3s ease, -webkit-transform .3s ease;
+    -webkit-transform-origin: right;
+    transform-origin: right;
+    position: absolute;
+    background-color: #c9dbe8;
 }
 `
