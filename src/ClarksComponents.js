@@ -38,6 +38,7 @@ export const CalenderAppWrapper = styled.div`
 export const CalendarWrapper = styled.div`
     && {
         padding: 1.5rem;
+        background-color: #ffff;
     }
 `
 
@@ -61,6 +62,7 @@ export const ClarkSection = styled.section`
 && {
     max-width: 45rem;
     margin: auto;
+    opacity: ${ props => props.opacity ? props.opacity : ''}
 
     *, *::before, *::after {
         display: block;
@@ -80,7 +82,7 @@ export const TitleContainer = styled.div`
 
 export const BoldHeader = styled.h2`
 && {
-    font-size: 2.8rem;
+    font-size: ${ props => props.fontSize ? props.fontSize : '2.8rem' };
     text-align: ${ props => props.textAlign ? props.textAlign : 'auto' };
     margin: ${ props => props.margin ? props.margin : 'auto' };
     color: ${ props => props.color ? props.color : 'black'};
@@ -278,5 +280,28 @@ export const ButtonText = styled.div`
 && img {
     height: 1.2rem;
     z-index: 1;
+}
+`
+export const CalendarText = styled.div`
+&& {
+    padding: 2rem;
+    color: #1e5d84;
+    font-size: 1.8rem;
+
+    .weekDay {
+        background-color: #f2c4c4;
+        padding: 0 1rem;
+    }
+}
+`
+export const StyledButton = styled.button`
+&& {
+    margin: 2rem auto 0;
+    border-color: #1e5d84;
+    border-radius: .3rem;
+    color: #fff;
+    background-color: #1e5d84;
+    padding: .5rem 2rem;
+    box-shadow: 0 0.2rem 0.4rem 0 rgba(0,0,0,0.2);
 }
 `

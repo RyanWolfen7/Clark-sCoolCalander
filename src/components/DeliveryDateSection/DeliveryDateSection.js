@@ -14,21 +14,21 @@ const DeliveryDateSection = (props) => {
 
   return (
     <DeliveryDateWrapper>
-      <ClarkSection>
-        <TitleContainer>
+      <ClarkSection opacity={calendarOpen ? '.5' : ''}>
+        <TitleContainer >
           <BoldHeader style={boldHeaderProps}>
             Choose your delivery day
               <span className='free-delivery-notice'> Delivery is always free</span>
           </BoldHeader>
         </TitleContainer>
-        { calendarOpen && <Calendar
-          date={selectedDate}
-        /> }
         <CalendarButton 
           handler={handleCalendar}
           date={selectedDate}
         /> 
       </ClarkSection>
+      { calendarOpen && <Calendar
+          date={selectedDate}
+        /> }
     </DeliveryDateWrapper>
   )
 }
