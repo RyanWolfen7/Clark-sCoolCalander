@@ -340,8 +340,11 @@ export const Overlay = styled.div`
 
     .modal {
             position: fixed; 
-            top: 50vh;
-            left: 50vw;
+            top: 50%;
+            left: 50%;
+            max-width: 95%;
+            max-height: 90%;
+            width: 45rem;
             transform: translate(-50%,-50%);
             background-color: white; 
             z-index: 2;
@@ -355,7 +358,13 @@ export const DateCell = styled.div`
     width: 14.2%;
     background-color: ${props => props.backgroundColor ? props.backgroundColor : ''};
     cursor: pointer;
-
+    box-sizing: border-box;
+    -webkit-box-direction: normal;
+    :after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+}
 }
 `
 export const DateItem = styled.div`
