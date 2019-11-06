@@ -305,3 +305,23 @@ export const StyledButton = styled.button`
     box-shadow: 0 0.2rem 0.4rem 0 rgba(0,0,0,0.2);
 }
 `
+
+export const DatePicker = styled.div`
+&& {
+    margin: 2rem auto;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+
+    .date-picker-head {
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+    }
+    .date-picker-body {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+`

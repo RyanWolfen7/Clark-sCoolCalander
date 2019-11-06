@@ -1,13 +1,18 @@
 import React from 'react'
-import { CalendarWrapper, BoldHeader, CalendarText, StyledButton } from '../../ClarksComponents'
+import { CalendarWrapper, BoldHeader, CalendarText, StyledButton, DatePicker } from '../../ClarksComponents'
 
 const Calander = (props) => {
     const { day, numDay, month, year } = props.date
+    const numberOfDays = new Date( year, new Date().getUTCMonth(month), 0 ).getDate() 
 
     return (
         <CalendarWrapper>
             <button style={buttonStyle}>X</button>
             <BoldHeader style={ header }> { month } </BoldHeader>
+            <DatePicker>
+                <div className="date-picker-head"></div>
+                <div className="date-picker-body"></div>
+            </DatePicker>
             <CalendarText>
                 <span className='weekDay'> {day} </span>
                 <span> will be your regular delivery day. You can always change this in your account. </span>
