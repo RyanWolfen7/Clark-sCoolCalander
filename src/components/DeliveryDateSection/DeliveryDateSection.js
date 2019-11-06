@@ -7,9 +7,16 @@ const DeliveryDateSection = (props) => {
   const currentDate = new Date().toDateString().split(' ')
   const [ selectedDate, setSelectedDate ] = useState({ day: currentDate[0], month: currentDate[1], numDay: currentDate[2], year: currentDate[3] })
   const [ calendarOpen, setCalendarOpen ] = useState(false)  
-
   const handleCalendar = () => {
     setCalendarOpen(!calendarOpen)
+  }
+
+  useEffect(() => {
+    
+  }, [selectedDate])
+
+  const handleDate = (payload) => {
+    setSelectedDate(payload)
   }
 
   return (
@@ -28,6 +35,7 @@ const DeliveryDateSection = (props) => {
         { calendarOpen && <Calendar
           date={selectedDate}
           handleClose={handleCalendar}
+          handleDate={handleDate}
         /> }
       </ClarkSection>
     </DeliveryDateWrapper>

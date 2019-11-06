@@ -353,7 +353,9 @@ export const DateCell = styled.div`
     display: flex;
     padding: .25rem;
     width: 14.2%;
-    background-color: ${props => props.backgroundColor ? props.backgroundColor : ''}
+    background-color: ${props => props.backgroundColor ? props.backgroundColor : ''};
+    cursor: pointer;
+
 }
 `
 export const DateItem = styled.div`
