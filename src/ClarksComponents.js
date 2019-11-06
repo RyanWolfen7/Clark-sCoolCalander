@@ -326,26 +326,6 @@ export const DatePicker = styled.div`
         display: flex;
         flex-wrap: wrap;
     }
-
-    .date-cell {
-        display: flex;
-        padding: .25rem;
-        width: 14.2%;
-    }
-
-    .date-item {
-        -webkit-box-align: center;
-        align-items: center;
-        border-radius: .2rem;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        flex-direction: column;
-        -webkit-box-pack: center;
-        justify-content: center;
-        width: 100%;
-        font-size: 1.8rem;
-    }
 }
 `
 export const Overlay = styled.div`
@@ -366,5 +346,32 @@ export const Overlay = styled.div`
             background-color: white; 
             z-index: 2;
     }
+}
+`
+export const DateCell = styled.div`
+&& {
+    display: flex;
+    padding: .25rem;
+    width: 14.2%;
+    background-color: ${props => props.backgroundColor ? props.backgroundColor : ''}
+}
+`
+export const DateItem = styled.div`
+&& {
+    color: ${props => props.color ? props.color : '#e66c55'};
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: .2rem;
+    border: ${props => props.border ? props.border : '.05rem solid #e66c55'}
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.8rem;
+    opacity: ${props => props.opacity ? props.opacity : 1};
+    background-color: ${props => props.backgroundColor ? props.backgroundColor : ''}
 }
 `
