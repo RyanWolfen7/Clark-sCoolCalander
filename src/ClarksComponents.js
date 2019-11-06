@@ -86,7 +86,7 @@ export const BoldHeader = styled.h2`
     text-align: ${ props => props.textAlign ? props.textAlign : 'auto' };
     margin: ${ props => props.margin ? props.margin : 'auto' };
     color: ${ props => props.color ? props.color : 'black'};
-    font-family: "cooperhewitt", helvetica, arial, sans-serif;
+    font-family: "cooper hewitt", helvetica, arial, sans-serif;
     font-weight: 900;
 
     *::before, *::after {
@@ -98,7 +98,7 @@ export const BoldHeader = styled.h2`
     color: #1e5d84;
     border-radius: .2rem;
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: 900;
     font-family: "gt-pressura-regular", helvetica, arial, sans-serif;
     text-align: left;
     display: inline-block;
@@ -129,6 +129,17 @@ export const Button = styled.button`
     border: ${ props => props.border ? props.border : '0.2rem solid #5d92b8' };
     cursor: pointer;
     letter-spacing: .12rem;
+    -webkit-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: center;
 
     *::before, *::after {
         box-sizing: border-box;
@@ -149,6 +160,7 @@ export const ButtonContent = styled.div`
     flex-wrap: wrap;
     padding: .5rem 0 .3rem 1rem;
     z-index: 1;
+    
 }
 && p {
     color: #1e5d84;
@@ -258,6 +270,7 @@ export const ButtonText = styled.div`
     padding: 0 1rem;
     -webkit-box-align: center;
     align-items: center;
+    font-family: "gt-pressura-regular", courier, courier-new, monospace;
 } 
 && p {
     position: relative;
@@ -290,6 +303,7 @@ export const CalendarText = styled.div`
     padding: 2rem;
     color: #1e5d84;
     font-size: 1.8rem;
+    font-family: "gt-pressura-regular", helvetica, arial, sans-serif;
 
     .weekDay {
         background-color: #f2c4c4;
@@ -300,12 +314,17 @@ export const CalendarText = styled.div`
 export const StyledButton = styled.button`
 && {
     margin: 2rem auto 0;
-    border-color: #1e5d84;
     border-radius: .3rem;
     color: #fff;
     background-color: #1e5d84;
     padding: .5rem 2rem;
     box-shadow: 0 0.2rem 0.4rem 0 rgba(0,0,0,0.2);
+    -webkit-appearance: button;
+    border: 0.1rem solid #1e5d84;
+    font-family: "gt-pressura-mono", courier, courier-new, monospace;
+    font-size: 1.7rem;
+    outline: 0;
+    transition: background-color .2s ease-in-out;
 }
 `
 
@@ -354,6 +373,8 @@ export const Overlay = styled.div`
 export const DateCell = styled.div`
 && {
     display: flex;
+    font-family: "gt-pressura-mono", courier, courier-new, monospace;
+    font-weight: 600;
     padding: .25rem;
     width: 14.2%;
     background-color: ${props => props.backgroundColor ? props.backgroundColor : ''};

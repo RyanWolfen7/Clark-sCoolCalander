@@ -6,8 +6,11 @@ import Calendar from './Calendar'
 const DeliveryDateSection = (props) => {
   const currentDate = new Date().toDateString().split(' ')
   const [ selectedDate, setSelectedDate ] = useState({ day: currentDate[0], month: currentDate[1], numDay: currentDate[2], year: currentDate[3] })
-  const [ calendarOpen, setCalendarOpen ] = useState(false)  
-  const handleCalendar = () => {
+  const [ oldDate, setOldDate ] = useState(selectedDate)
+  const [ calendarOpen, setCalendarOpen ] = useState(false) 
+  
+  const handleCalendar = (save) => {
+    save ? setOldDate(selectedDate) : setSelectedDate(oldDate)
     setCalendarOpen(!calendarOpen)
   }
 

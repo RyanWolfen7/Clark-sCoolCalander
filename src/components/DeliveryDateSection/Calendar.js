@@ -3,8 +3,7 @@ import { CalendarWrapper, BoldHeader, CalendarText, StyledButton, DatePicker, Ov
 
 const Calander = (props) => {
   const { day, numDay, month, year } = props.date
-  const handleDate = props.handleDate
-  const handleClose = props.handleClose
+  const { handleDate, handleClose } = props
   const daysArr = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   const numberOfDays = new Date(year, new Date(`${numDay} ${month} ${year}`).getUTCMonth() + 1, 0).getDate()
   const startMonth = new Date(`1 ${month} ${year}`).toDateString().split(' ')[0]
@@ -26,7 +25,7 @@ const Calander = (props) => {
   const createCells = (element, index) => {
     let styles = {}
     let clickable = true
-    if(new Date(`${element} ${month} ${year}`) < new Date()) { styles = oldDates ; clickable = false }
+    if(new Date(`${element} ${month} ${year}`) < new Date()) { styles = pastDates ; clickable = false }
     if(element === '') { styles = blank ; clickable = false } 
     if(daysArr.find(x => x[0] === element)) { styles = headerDays ; clickable = false}
     if(element == numDay) { styles = selectedDay }
@@ -61,7 +60,7 @@ const Calander = (props) => {
             <span className='weekDay'> {day} </span>
             <span> will be your regular delivery day. You can always change this in your account. </span>
           </CalendarText>
-          <StyledButton> GOT IT </StyledButton>
+          <StyledButton onClick={() => handleClose(true)}> GOT IT </StyledButton>
         </CalendarWrapper>
       </div>
     </Overlay>
@@ -72,9 +71,9 @@ export default Calander
 
 const header = { margin: ' 0 0 0 0', textAlign: 'center', fontSize: '2rem', color: '#1e5d84' }
 const headerDays = { color: '#1e5d84', border: '0' }
-const buttonStyle = { position: 'auto', top: '2rem', right: '1.5rem', padding: '1rem', cursor: 'pointer', border: '0', float: 'right', color: 'lightGrey', fontWeight: '900' }
-const oldDates = { backgroundColor: 'lightGrey', opacity: '0.5', color: 'darkGrey', border: '0', cursor: 'default' } 
+const buttonStyle = { position: 'auto', top: '2rem', right: '1.5rem', padding: '1rem', cursor: 'pointer', border: '0', float: 'right', color: 'lightGrey', fontWeight: '900', backgroundColor: '#ffff' }
+const pastDates = { backgroundColor: 'lightGrey', opacity: '0.5', color: 'darkGrey', border: '0', cursor: 'default' } 
 const selectedDay = { backgroundColor: '#e66c55', color: '#ffff' }
-const changeMonthButton = { margin: '10px 10px 0px', border: '0', fontSize: '2.5rem', color: '#1e5d84' }
+const changeMonthButton = { margin: '10px 10px 0px', border: '0', fontSize: '2.5rem', color: '#1e5d84', backgroundColor: '#ffff' }
 const blank = { backgroundColor: '#ffff', border: '0', cursor: 'default'}
-const currentDateStyle = { backgroundColor: '#e66c55', borderRadius: '50%', color: '#fff'}
+// const currentDateStyle = { backgroundColor: '#e66c55', borderRadius: '50%', color: '#fff'} // impliment later
