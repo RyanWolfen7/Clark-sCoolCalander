@@ -326,6 +326,26 @@ export const DatePicker = styled.div`
         display: flex;
         flex-wrap: wrap;
     }
+
+    .date-cell {
+        display: flex;
+        padding: .25rem;
+        width: 14.2%;
+    }
+
+    .date-item {
+        -webkit-box-align: center;
+        align-items: center;
+        border-radius: .2rem;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        justify-content: center;
+        width: 100%;
+        font-size: 1.8rem;
+    }
 }
 `
 export const Overlay = styled.div`

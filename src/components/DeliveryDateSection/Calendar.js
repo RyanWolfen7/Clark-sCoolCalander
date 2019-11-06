@@ -5,11 +5,19 @@ const Calander = (props) => {
     const { day, numDay, month, year } = props.date
     const handleClose = props.handleClose
     const numberOfDays = new Date( year, new Date().getUTCMonth(month), 0 ).getDate()
+    const daysArr = [ 'M', 'T', 'W', 'T', 'F', 'S', 'S' ]
 
     const closeOutsideModal = (event) => {
         const overlay = document.getElementsByClassName('overlay')
         if(event.target === overlay[0] ) { handleClose() }
     }
+
+    const createCalendar = () => {
+        const monthStart = new Date(`1 ${month} ${year}`).toDateString().split(' ')[0][0] 
+        console.log(monthStart)
+    }
+
+    const createCells = (element) => { return ( <div className='date-cell'> <div className='date-item'> { element } </div> </div> ) }
 
     return (
         <Overlay className="overlay" onClick={event => closeOutsideModal(event)}>
@@ -18,8 +26,8 @@ const Calander = (props) => {
                     <button style={buttonStyle} onClick={() => handleClose()}>X</button>
                     <BoldHeader style={ header }> { month } </BoldHeader>
                     <DatePicker>
-                        <div className="date-picker-head"></div>
-                        <div className="date-picker-body"></div>
+                        <div className="date-picker-head"> { daysArr.map( element => createCells(element))} </div>
+                        <div className="date-picker-body"> { createCalendar() } </div>
                     </DatePicker>
                     <CalendarText>
                         <span className='weekDay'> {day} </span>
