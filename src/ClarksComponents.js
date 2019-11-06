@@ -94,7 +94,7 @@ export const BoldHeader = styled.h2`
     }
 }
 && span {
-    background-color: #e7e6e4;
+    background-color: #c9dbe8;
     color: #1e5d84;
     border-radius: .2rem;
     font-size: 1.8rem;
@@ -217,6 +217,9 @@ export const ButtonContentDate = styled.div `
 
 export const CalanderDiv = styled.div`
 && {
+    :before {
+        opacity: 1;
+    }
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: center;
@@ -268,7 +271,7 @@ export const ButtonText = styled.div`
 
     ::after {
         background-color: #1e5d84;
-        bottom: 40;
+        bottom: 0;
         content: '';
         height: 0.2rem;
         left: 0;
@@ -279,7 +282,7 @@ export const ButtonText = styled.div`
 }
 && img {
     height: 1.2rem;
-    z-index: 1;
+    z-index: ;
 }
 `
 export const CalendarText = styled.div`
@@ -322,6 +325,26 @@ export const DatePicker = styled.div`
     .date-picker-body {
         display: flex;
         flex-wrap: wrap;
+    }
+}
+`
+export const Overlay = styled.div`
+&& {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128,128,128,0.5);
+    z-index: 1; 
+
+    .modal {
+            position: fixed; 
+            top: 50vh;
+            left: 50vw;
+            transform: translate(-50%,-50%);
+            background-color: white; 
+            z-index: 2;
     }
 }
 `

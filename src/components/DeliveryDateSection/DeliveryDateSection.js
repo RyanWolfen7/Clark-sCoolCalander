@@ -14,7 +14,7 @@ const DeliveryDateSection = (props) => {
 
   return (
     <DeliveryDateWrapper>
-      <ClarkSection opacity={calendarOpen ? '.5' : ''}>
+      <ClarkSection>
         <TitleContainer >
           <BoldHeader style={boldHeaderProps}>
             Choose your delivery day
@@ -27,6 +27,7 @@ const DeliveryDateSection = (props) => {
         /> 
         { calendarOpen && <Calendar
           date={selectedDate}
+          handleClose={handleCalendar}
         /> }
       </ClarkSection>
     </DeliveryDateWrapper>
