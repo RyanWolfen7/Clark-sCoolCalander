@@ -373,5 +373,6 @@ export const DateItem = styled.div`
     font-size: 1.8rem;
     opacity: ${props => props.opacity ? props.opacity : 1};
     background-color: ${props => props.backgroundColor ? props.backgroundColor : ''}
+    z-Index: ${props => props.zIndex ? props.zIndex : '' }
 }
 `

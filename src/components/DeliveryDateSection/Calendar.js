@@ -19,9 +19,9 @@ const Calander = (props) => {
     }
     const createCells = (element) => { 
         let styles = {}
-        if (daysArr.find(x => x[0] == element)) { styles = headerDays}
+        if (daysArr.find(x => x[0] === element)) { styles = headerDays}
         if (element == numDay) { styles = selectedDay}
-        if (element < new Date().getDate()) { styles = oldDates}
+        if (element < new Date().getDate()) { styles = oldDates(element)}
         return ( 
             <DateCell className='date-cell' >
                 <DateItem className='date-item' style={ styles }> { element } </DateItem>
@@ -54,6 +54,6 @@ export default Calander
 
 const header = { margin: ' 0 0 0 0', textAlign: 'center', fontSize: '2rem', color: '#1e5d84' }
 const headerDays = { color: '#1e5d84', border: '0' }
-const buttonStyle = { position: 'auto', top: '2rem', right: '1.5rem', padding: '1rem', cursor: 'pointer', border: '0', float: 'right', color: '#1e5d84', fontWeight: '900' }
-const oldDates = { backgroundColor: 'lightGrey', opacity: '0.5', color: 'darkGrey', border: '0'}
+const buttonStyle = { position: 'auto', top: '2rem', right: '1.5rem', padding: '1rem', cursor: 'pointer', border: '0', float: 'right', color: 'lightGrey', fontWeight: '900' }
+const oldDates = (element) => { return { backgroundColor: element === '' ? '#ffff' : 'lightGrey', opacity: '0.5', color: 'darkGrey', border: '0'} }
 const selectedDay = { backgroundColor: '#e66c55', color: '#ffff'}
