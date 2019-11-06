@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import { ClarkSection, TitleContainer, BoldHeader, DeliveryDateWrapper } from '../../ClarksComponents'
 import CalendarButton from './CalendarButton'
 import Calendar from './Calendar'
