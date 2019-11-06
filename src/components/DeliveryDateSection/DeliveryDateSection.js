@@ -11,10 +11,6 @@ const DeliveryDateSection = (props) => {
     setCalendarOpen(!calendarOpen)
   }
 
-  useEffect(() => {
-    
-  }, [selectedDate])
-
   const handleDate = (payload) => {
     setSelectedDate(payload)
   }
