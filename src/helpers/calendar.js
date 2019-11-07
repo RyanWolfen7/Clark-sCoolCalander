@@ -20,12 +20,14 @@ export const filterCells = (props) => {
     let styles = {}
     let clickable = true
 
-    if(new Date(`${element} ${month} ${year}`) < new Date()) { styles = pastDates ; clickable = false }
-    if(element === '') { styles = blank ; clickable = false } 
-    if(daysArr.find(x => x[0] === element)) { styles = headerDays ; clickable = false}
-    if(element == numDay) { styles = selectedDay }
+    if(currentDateChecker(element,month, year)) { styles = pastDates ; clickable = false } // past dates/disabled
+    if(element === '') { styles = blank ; clickable = false } // blanks
+    if(daysArr.find(x => x[0] === element)) { styles = headerDays ; clickable = false} // header
+    if(element == numDay) { styles = selectedDay } //selector
     return {clickable, styles}
 }
+
+export const currentDateChecker = (element, month, year) => { return new Date(`${element} ${month} ${year}`) < new Date() }
 
 const headerDays = { color: '#1e5d84', border: '0' }
 const pastDates = { backgroundColor: 'lightGrey', opacity: '0.5', color: 'darkGrey', border: '0', cursor: 'default' } 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { CalendarWrapper, BoldHeader, CalendarText, StyledButton, DatePicker, Overlay, DateCell, DateItem } from '../../ClarksComponents'
-import { currentMonth, daysArr, findMonthStartDay, filterCells } from '../../helpers/calendar'
+import { currentMonth, daysArr, findMonthStartDay, filterCells, currentDateChecker } from '../../helpers/calendar'
 
 const Calander = (props) => {
   const { day, numDay, month, year } = props.date
@@ -54,7 +54,7 @@ const Calander = (props) => {
             <span className='weekDay'> {day} </span>
             <span> will be your regular delivery day. You can always change this in your account. </span>
           </CalendarText>
-          <StyledButton onClick={() => handleClose(true)}> GOT IT </StyledButton>
+          <StyledButton onClick={() => handleClose(currentDateChecker(numDay, month, year))}> GOT IT </StyledButton>
         </CalendarWrapper>
       </div>
     </Overlay>
