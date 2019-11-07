@@ -71,6 +71,10 @@ export const BoldHeader = styled.h2`
     color: ${ props => props.color ? props.color : 'black'};
     font-family: "cooper hewitt", helvetica, arial, sans-serif;
     font-weight: 900;
+
+    *::before, *::after {
+        box-sizing: border-box;
+    }
 }
 && span {
     background-color: #c9dbe8;
@@ -84,6 +88,10 @@ export const BoldHeader = styled.h2`
     padding: .2rem 1rem;
     transform: translateY(-0.3rem);
     margin: 0;
+
+    *::before, *::after {
+        box-sizing: border-box;
+    }
 }
 `
 
@@ -116,6 +124,9 @@ export const Button = styled.button`
     text-shadow: none;
     text-align: center;
 
+    *::before, *::after {
+        box-sizing: border-box;
+    }
 }
 :hover {
     nth-child(7):hover {
@@ -241,8 +252,24 @@ export const ButtonText = styled.div`
     display: flex;
     padding: 0 1rem;
     -webkit-box-align: center;
+    -webkit-transition: -webkit-transform .3s ease;
+    -webkit-transform-origin: right;
+    transition: -webkit-transform .3s ease;
     align-items: center;
     font-family: "gt-pressura-regular", courier, courier-new, monospace;
+
+    ::after {
+      content: '';
+      height: 14rem;
+      border-bottom-left-radius: 7rem;
+      border-top-left-radius: 7rem;
+      width: calc(100% + 1rem);
+      top: -3.6rem;
+      transition: transform .3s ease;
+      transform-origin: right;
+      position: absolute;
+      background-color: #c9dbe8;
+  }
 } 
 && p {
     position: relative;
