@@ -126,7 +126,7 @@ export const Button = styled.button`
 
     *::before, *::after {
         box-sizing: border-box;
-        transition: width 1s;
+        transition: width 0.5s;
         transition-timing-function: ease;
   
     }
@@ -277,17 +277,7 @@ export const ButtonText = styled.div`
     background-size: 1rem;
     margin-right: .9rem;
     margin-bottom: .2rem;
-
-    :after {
-        background-color: #1e5d84;
-        bottom: 0;
-        content: '';
-        height: 0.2rem;
-        left: 0;
-        position: absolute;
-        width: 100%;
-        z-index: -1;
-    }
+    border-bottom: solid 2px;
 }
 && img {
     height: 1.2rem;
