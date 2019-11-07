@@ -54,7 +54,7 @@ const Calander = (props) => {
             <span className='weekDay'> {day} </span>
             <span> will be your regular delivery day. You can always change this in your account. </span>
           </CalendarText>
-          <StyledButton onClick={() => handleClose(currentDateChecker(numDay, month, year))}> GOT IT </StyledButton>
+          <StyledButton onClick={() => handleClose(!currentDateChecker(numDay, month, year))}> GOT IT </StyledButton>
         </CalendarWrapper>
       </div>
     </Overlay>
