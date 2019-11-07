@@ -10,7 +10,7 @@ const DeliveryDateSection = (props) => {
   const [ calendarOpen, setCalendarOpen ] = useState(false) 
   
   const handleCalendar = (save) => {
-    save && window.confirm(`You've successfully changed your delivery date`, 'default') ? setOldDate(selectedDate) : setSelectedDate(oldDate)
+    save && window.confirm(`You've successfully changed your delivery date`) ? setOldDate(selectedDate) : setSelectedDate(oldDate)
     setCalendarOpen(!calendarOpen)
   }
 
