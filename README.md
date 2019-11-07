@@ -11,8 +11,6 @@ Future Plans:
 - rework the components
 - better structure the css
 
-# Tracks System
-
 ## Getting started
 
 * cd into frontend folder
