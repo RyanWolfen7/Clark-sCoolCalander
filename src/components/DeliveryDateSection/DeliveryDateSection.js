@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { ClarkSection, TitleContainer, BoldHeader, DeliveryDateWrapper } from '../../ClarksComponents'
 import CalendarButton from './CalendarButton'
 import Calendar from './Calendar'
@@ -13,9 +13,8 @@ const DeliveryDateSection = (props) => {
     if(save) {
       setOldDate(selectedDate)
       window.alert(`You've successfully changed your delivery date`)
-    } else if(calendarOpen) {
+    } else {
       setSelectedDate(oldDate)
-      window.alert(`You've changes have been reverted`)
     } 
     setCalendarOpen(!calendarOpen)
   }
