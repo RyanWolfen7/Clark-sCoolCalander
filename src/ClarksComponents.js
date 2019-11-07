@@ -27,11 +27,6 @@ export const CalenderAppWrapper = styled.div`
     min-height: 100vh;
     min-width: 100vw;
     background-color: ${ props => props.backgroundColor ? props.backgroundColor : '#1e5d84' };
-
-    *, *::before, *::after {
-        box-sizing: border-box;
-    
-    }
 }
 `
 
@@ -50,11 +45,6 @@ export const DeliveryDateWrapper = styled.div`
     background-color: ${ props => props.backgroundColor ? props.backgroundColor : '#f7f5f3' };
     border-radius: 0.3rem;
     height: auto;
-
-    *, *::before, *::after {
-        box-sizing: border-box;
-    
-    }
 }
 `
 
@@ -63,10 +53,6 @@ export const ClarkSection = styled.section`
     max-width: 45rem;
     margin: auto;
     opacity: ${ props => props.opacity ? props.opacity : ''}
-
-    *, *::before, *::after {
-        display: block;
-    }
 }
 `
 
@@ -74,9 +60,6 @@ export const TitleContainer = styled.div`
 && {
     display: flex;
     margin-bottom: 2rem;
-}
-&& *, *::before, *::after {
-    box-sizing: border-box;
 }
 `
 
@@ -88,10 +71,6 @@ export const BoldHeader = styled.h2`
     color: ${ props => props.color ? props.color : 'black'};
     font-family: "cooper hewitt", helvetica, arial, sans-serif;
     font-weight: 900;
-
-    *::before, *::after {
-        box-sizing: border-box;
-    }
 }
 && span {
     background-color: #c9dbe8;
@@ -105,10 +84,6 @@ export const BoldHeader = styled.h2`
     padding: .2rem 1rem;
     transform: translateY(-0.3rem);
     margin: 0;
-
-    *::before, *::after {
-        box-sizing: border-box;
-    }
 }
 `
 
@@ -141,9 +116,6 @@ export const Button = styled.button`
     text-shadow: none;
     text-align: center;
 
-    *::before, *::after {
-        box-sizing: border-box;
-    }
 }
 :hover {
     nth-child(7):hover {
