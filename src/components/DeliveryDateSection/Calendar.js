@@ -1,13 +1,11 @@
 import React from 'react'
 import { CalendarWrapper, BoldHeader, CalendarText, StyledButton, DatePicker, Overlay, DateCell, DateItem } from '../../ClarksComponents'
+import { currentMonth, daysArr, findMonthStartDay, filterCells } from '../../helpers/calendar'
 
 const Calander = (props) => {
   const { day, numDay, month, year } = props.date
   const { handleDate, handleClose } = props
-  const daysArr = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-  const numberOfDays = new Date(year, new Date(`${numDay} ${month} ${year}`).getUTCMonth() + 1, 0).getDate()
-  const startMonth = new Date(`1 ${month} ${year}`).toDateString().split(' ')[0]
-  const daysInMonthArr = [...Array(numberOfDays).keys()].slice(1)
+  const { startMonth, daysInMonthArr } = currentMonth(numDay, month, year)
 
   const closeOutsideModal = (event) => {
     const overlay = document.getElementsByClassName('overlay') //fix later
@@ -19,16 +17,12 @@ const Calander = (props) => {
     handleDate({ ...props.date, ...{ day: updatedDay, numDay: selected, month: month } })
   }
   const createCalendar = () => {
-    [...Array(daysArr.findIndex((element) => { return element === startMonth }) + 1).keys()].slice(1).forEach(() => daysInMonthArr.unshift('')) //Finds the day in the week that the month starts on and adds spaces 
+    findMonthStartDay(startMonth, daysInMonthArr)
     return daysInMonthArr.map((element, index) => createCells(element, index))
   }
   const createCells = (element, index) => {
-    let styles = {}
-    let clickable = true
-    if(new Date(`${element} ${month} ${year}`) < new Date()) { styles = pastDates ; clickable = false }
-    if(element === '') { styles = blank ; clickable = false } 
-    if(daysArr.find(x => x[0] === element)) { styles = headerDays ; clickable = false}
-    if(element == numDay) { styles = selectedDay }
+    let { clickable, styles } = filterCells({element, month, year, numDay})
+    
     return (
       <DateCell className='date-cell' key={index}>
         <DateItem onClick={() => clickable ? selectDay(element) : ''} className='date-item' style={styles}> {element} </DateItem>
@@ -70,10 +64,5 @@ const Calander = (props) => {
 export default Calander
 
 const header = { margin: ' 0 0 0 0', textAlign: 'center', fontSize: '2rem', color: '#1e5d84' }
-const headerDays = { color: '#1e5d84', border: '0' }
 const buttonStyle = { position: 'auto', top: '2rem', right: '1.5rem', padding: '1rem', cursor: 'pointer', border: '0', float: 'right', color: 'lightGrey', fontWeight: '900', backgroundColor: '#ffff' }
-const pastDates = { backgroundColor: 'lightGrey', opacity: '0.5', color: 'darkGrey', border: '0', cursor: 'default' } 
-const selectedDay = { backgroundColor: '#e66c55', color: '#ffff' }
 const changeMonthButton = { margin: '10px 10px 0px', border: '0', fontSize: '2.5rem', color: '#1e5d84', backgroundColor: '#ffff' }
-const blank = { backgroundColor: '#ffff', border: '0', cursor: 'default'}
-// const currentDateStyle = { backgroundColor: '#e66c55', borderRadius: '50%', color: '#fff'} // impliment later

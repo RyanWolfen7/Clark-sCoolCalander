@@ -257,20 +257,28 @@ export const ButtonText = styled.div`
     transition: -webkit-transform .3s ease;
     align-items: center;
     font-family: "gt-pressura-regular", courier, courier-new, monospace;
-
-    ::after {
-      content: '';
-      height: 14rem;
-      border-bottom-left-radius: 7rem;
-      border-top-left-radius: 7rem;
-      width: calc(100% + 1rem);
-      top: -3.6rem;
-      transition: transform .3s ease;
-      transform-origin: right;
-      position: absolute;
-      background-color: #c9dbe8;
-  }
 } 
+&:after {
+  content: '';
+  height: 14rem;
+  border-bottom-left-radius: 7rem;
+  border-top-left-radius: 7rem;
+  width: calc(100% + 1rem);
+  top: -3.6rem;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+  transform-origin: right;
+  position: absolute;
+  z-index: -1
+}
+&button:after {
+  background-size: 300%
+  background-position 100%;
+  transition: .3s ease
+}
+&button:hover:after {
+  background-position: 0;
+  background-color: #c9dbe8;
+}
 && p {
     position: relative;
     white-space: nowrap;
