@@ -8,7 +8,6 @@ const DeliveryDateSection = (props) => {
   const [ selectedDate, setSelectedDate ] = useState({ day: currentDate[0], month: currentDate[1], numDay: currentDate[2], year: currentDate[3] })
   const [ oldDate, setOldDate ] = useState(selectedDate)
   const [ calendarOpen, setCalendarOpen ] = useState(false) 
-  console.log(selectedDate)
   
   const handleCalendar = (save) => {
     if(save) {
